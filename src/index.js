@@ -70,13 +70,13 @@ async function searchLoadMoreImg() {
     galleryEl.insertAdjacentHTML('beforeend', createGallery(data.hits));
     gallery.refresh();
 
-    // const { height: cardHeight } =
-    //   galleryEl.firstElementChild.getBoundingClientRect();
+    const { height: cardHeight } =
+      galleryEl.firstElementChild.getBoundingClientRect();
 
-    // window.scrollBy({
-    //   top: cardHeight * 2,
-    //   behavior: 'smooth',
-    // });
+    window.scrollBy({
+      top: cardHeight * 2,
+      behavior: 'smooth',
+    });
 
     if (data.hits.length < pixabayAPI.per_page) {
       btnLoadMoreEl.classList.add('is-hidden');
